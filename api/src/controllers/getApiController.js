@@ -6,8 +6,8 @@ const getCountries = async ()=>{
       return{
         id : c.cca3,
         name: c.name.common,
-        flag: c.flags[1],
-        continents: c.continents,
+        flags: c.flags[1],
+        continents: c.continents[0],
         capital: c.capital || ['No tiene capital'],
         subregion: c.subregion || ['No hay datos de subregión'],
         area: c.area,
