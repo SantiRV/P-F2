@@ -3,7 +3,7 @@ import {
     GETALLCOUNTRIES,
     FILTERCOUNTRIES,
     ORDERCOUNTRIESAZ,
-    ORDERCOUNTRIESZA,
+    ORDERCOUNTRIESPOP,
     COUNTRYDETAIL,
     GETACTIVITIES,
     GETCOUNTRIESQUERY,
@@ -39,7 +39,7 @@ export function orderByNameAsc(payload) {
 
 export function orderByNameDesc(payload) {
     return {
-        type: ORDERCOUNTRIESZA,
+        type: ORDERCOUNTRIESPOP,
         payload,
     }
 };
