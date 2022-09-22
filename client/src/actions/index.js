@@ -37,7 +37,7 @@ export function orderByNameAsc(payload) {
     }
 };
 
-export function orderByNameDesc(payload) {
+export function orderByPop(payload) {
     return {
         type: ORDERCOUNTRIESPOP,
         payload,
