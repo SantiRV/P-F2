@@ -21,7 +21,7 @@ export default function CountryDetail(props) {
     };
 
     return (
-        <div className='pridiv'>
+        <div className='prindiv'>
 
             <div className='bar'>
                 <Link to='/home'>
@@ -54,7 +54,7 @@ export default function CountryDetail(props) {
                         country.Activities.map(e => {
                             return (
                                 <div>
-                                    <h4 className='name'>{e.name}</h4>
+                                    <h4 className='nameact'>{e.name}</h4>
                                     <p className='detail'>Difficulty: {e.difficulty}</p>
                                     <p className='detail'>Duration: {e.duration}</p>
                                     <p className='detail'>Season: {e.season}</p>
@@ -64,7 +64,7 @@ export default function CountryDetail(props) {
                         <p>Activities not found</p>
                     }
                     <Link to='/activities'>
-                        <button className='botcard'>Create Activity</button>
+                        <button className='botactd'>Create Activity</button>
                     </Link>
                 </div>
             </div>

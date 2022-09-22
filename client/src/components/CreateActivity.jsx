@@ -114,9 +114,60 @@ export default function CreateActivity() {
             <div className='contenedorform'>
                 <h2 className='titulo'>Create your own activity</h2>
                 <form onSubmit={(e) => handleSubmit(e)}>
-                    
+                    <div>
+                        <label className='campos'>Name:</label>
+                        <input className='inputs' type='text' value={input.name} name='name' onChange={(e) => handleChange(e)} />
+                        {errors.name && (<p className='errors'>{errors.name}</p>)}
+                    </div>
+
+                    <div>
+                        <label className='campos'>Choose the country for your activity:</label>
+                        <select className='inputs' name='countries' id='countries' onChange={(e) => handleSelect(e)}>
+                            <option> </option>
+                            {countries.map((con) => (
+                                <option value={con.id}>{con.name}</option>
+                            ))}
+                        </select>
+                        {errors.countries && (<p className='errors'>{errors.countries}</p>)}
+                    </div>
+
+                    <div>
+                        <label className='campos'>Season:</label>
+                        <select className='inputs' name='season' id='season' onChange={(e) => handleSelect(e)}>
+                            <option value='vacio'> </option>
+                            <option value={'summer'}>Summer</option>
+                            <option value={'fall'}>Fall</option>
+                            <option value={'spring'}>Spring</option>
+                            <option value={'winter'}>winter</option>
+                        </select>
+                        {errors.season && (<p className='errors'>{errors.season}</p>)}
+                    </div>
+
+                    <div>
+                        <label className='campos'>Difficulty:</label>
+                        <input className='inputs' type='number' vlaue={input.difficulty} name='difficulty' onChange={(e) => handleChange(e)} />
+                        {errors.difficulty && (<p className='errors'>{errors.difficulty}</p>)} 
+                    </div>
+
+                    <div>
+                        <label className='campos'>Duration:</label>
+                        <input className='inputs' type='number' value={input.duration} name='duration' onChange={(e) => handleChange(e)} />
+                        <label className='campos'>hours</label>
+                        {errors.duration && (<p className='errors'>{errors.duration}</p>)}
+                    </div>
+
+                    <div>
+                        <button className='butsub' type='submit' disabled={Object.keys(errors).length === 0 ? false : true}>Add activity</button>
+                    </div>
                 </form> 
+
+                {input.countries.map(e => 
+                    <div className='conpais'>
+                        <p className='mpais'>{e}</p>
+                        <button className='botdelete' onClick={() => handleDelete(e)}>x</button>
+                    </div>
+                )}
             </div>
         </div>
     )
-}
+};

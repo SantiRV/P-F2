@@ -27,11 +27,11 @@ export default function NavBar({setCurrentPage}) {
         <div className="navbar">
             <div>
                 <Link to='/home'>
-                    <img className='button' onClick={(e) => handleClick(e)} src={logo} alt='logo' />
+                    <img className='bothome' onClick={(e) => handleClick(e)} src={logo} alt='logo' />
                 </Link>
             </div>
             <div className='search'>
-                <div className="searchtitulo">Find your next destination</div>
+                <div className="searchtitle">Find your next destination</div>
                 <input className="searchinp" value={name} type='txt'placeholder="what country do you want to visit..."
                 onChange={(e) => {setName(e.target.value); handleInputChange(e.target.value)}} />
             </div>

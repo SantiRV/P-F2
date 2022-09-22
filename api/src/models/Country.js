@@ -35,10 +35,8 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
     }
   }, {
-    charset: 'utf8',
-    collate: 'utf8_general_ci',
+   
     timestamps: false,
-    createdAt:false,
-    updateAt:false,
+    
   });
 };

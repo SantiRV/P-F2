@@ -56,7 +56,7 @@ export default function Home() {
     };
 
     return (
-        <div className='firstdiv'>
+        <div className='prindiv'>
             
             <div>
                 <NavBar setCurrentPage={setCurrentPage} />
