@@ -1,13 +1,13 @@
 import {React, useEffect} from 'react';
-import {Link, useHistory} from 'react-router-dom';
+import {Link, useHistory, useParams} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCountryDetail } from '../actions/index';
 import logo from '../images/logo.png';
 import '../styles/CountryDetail.css';
 
-export default function CountryDetail(props) {
+export default function CountryDetail() {
     const dispatch = useDispatch();
-    const id = props.match.params.id;
+    const {id} = useParams();
     const country = useSelector((state) => state.detail);
     const history = useHistory();
 
@@ -21,50 +21,50 @@ export default function CountryDetail(props) {
     };
 
     return (
-        <div className='prindiv'>
+        <div className='prindivcd'>
 
-            <div className='bar'>
+            <div className='barcd'>
                 <Link to='/home'>
-                    <img className='bothome' onClick={(e) => handleClick(e)} src={logo} alt='logo' />
+                    <img className='bothomecd' onClick={(e) => handleClick(e)} src={logo} alt='logo' />
                 </Link>
             </div>
 
-            <div className='card'>
-                <div className='conpais'>
-                    <h2 className='titulo'>Country Details</h2>
+            <div className='cardcd'>
+                <div className='conpaiscd'>
+                    <h2 className='titulocd'>Country Details</h2>
                     {
                         country ?
                         <div>
-                            <img className='flag' src={country.flags} alt='Img not found' />
-                            <h2 className='name'>{country.name}</h2>
-                            <h4 className='continent'>{country.continents}</h4>
-                            <h4 className='cod'>{country.id}</h4>
-                            <h4 className='detail'>Capital: {country.capital}</h4>
-                            <h4 className='detail'>Region: {country.subregion}</h4>
-                            <h4 className='detail'>Area: {country.area} km²</h4>
-                            <h4 className='detail'>Populaton: {country.population}</h4>
+                            <img className='flagcd' src={country.flags} alt='Img not found' />
+                            <h2 className='namecd'>{country.name}</h2>
+                            <h4 className='continentcd'>{country.continents}</h4>
+                            <h4 className='codcd'>{country.id}</h4>
+                            <h4 className='detailcd'>Capital: {country.capital}</h4>
+                            <h4 className='detailcd'>Region: {country.subregion}</h4>
+                            <h4 className='detailcd'>Area: {country.area} km²</h4>
+                            <h4 className='detailcd'>Populaton: {country.population}</h4>
                         </div> : <p>Loading...</p>
                     }
                 </div>
-                <div className='conact'>
-                    <h3 className='titulo'>Country Activities</h3>
+                <div className='conactcd'>
+                    <h3 className='titulocd'>Country Activities</h3>
 
                     {
                         country.Activities&&country.Activities.length ?
                         country.Activities.map(e => {
                             return (
                                 <div>
-                                    <h4 className='nameact'>{e.name}</h4>
-                                    <p className='detail'>Difficulty: {e.difficulty}</p>
-                                    <p className='detail'>Duration: {e.duration}</p>
-                                    <p className='detail'>Season: {e.season}</p>
+                                    <h4 className='nameactcd'>{e.name}</h4>
+                                    <p className='detailcd'>Difficulty: {e.difficulty}</p>
+                                    <p className='detailcd'>Duration: {e.duration}</p>
+                                    <p className='detailcd'>Season: {e.season}</p>
                                 </div>
                             )
                         }) :
                         <p>Activities not found</p>
                     }
                     <Link to='/activities'>
-                        <button className='botactd'>Create Activity</button>
+                        <button className='botactdcd'>Create Activity</button>
                     </Link>
                 </div>
             </div>

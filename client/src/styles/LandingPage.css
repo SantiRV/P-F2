@@ -1,14 +1,14 @@
 body {
-    background-image: url('../images/LpBack.jpg');
+    background-image: url('../images/LpBack.jpg'); 
     background-size: cover;
 }
 
-.titulo {
+.titulolp {
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(136, 97, 47);
 }
 
-.button {
+.buttonlp {
     border-radius: 8px;
     background-color: rgb(136, 97, 47);
     border: none;
@@ -24,14 +24,14 @@ body {
     position: absolute;
 }
 
-.button span {
+.buttonlp span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
 
-.button span:after {
+.buttonlp span:after {
     content: '/00bb';
     position: absolute;
     opacity: 0;
@@ -39,6 +39,6 @@ body {
     transition: 0.5s;
 }
 
-.button:hover span {
+.buttonlp:hover span {
     padding-right: 25px;
 }

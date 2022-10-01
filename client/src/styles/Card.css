@@ -10,7 +10,7 @@
     
 }
 
-.flag {
+.flagcard {
     border-radius: 4%;
     width: 9em;
     height: 6em;
@@ -21,7 +21,7 @@
     margin-bottom: -30px;
 }
 
-.titulo{
+.titulocard{
     color: rgb(9, 57, 154);
     font-weight: bolder;
     font-size: x-large;
@@ -34,13 +34,13 @@
     white-space: nowrap;
 }
 
-.continent {
+.continentcard {
     color: rgb(9, 57, 154);
     text-align: center;
     margin-bottom: 10px;
 }
 
-.button {
+.buttoncard {
     border-radius: 5px;
     color:#07648f;;
     background-color: antiquewhite;
@@ -51,7 +51,7 @@
     top: 20px
 }
 
-.button:hover {
+.buttoncard:hover {
     color: antiquewhite;
     background-color: #07648f;
     border-color: #07648f;

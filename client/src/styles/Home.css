@@ -1,4 +1,4 @@
-.prindiv {
+.prindivhm {
     
     background-size: cover;
     width: auto;
@@ -11,7 +11,7 @@
 
 
 
-.contenedorCards {
+.contenedorCardshm {
     
     display: inline-flex;
     flex-direction: row;
@@ -24,7 +24,7 @@
     top: 75px;
 }
 
-.filters {
+.filtershm {
     color: blanchedalmond;
     border-color: black;
     border-radius: 5px;
@@ -36,11 +36,10 @@
     color: white;
     font-weight: bold;
     position:absolute;
-    top: 120px;
-    left: 390px
+    
 }
 
-.select {
+.selecthm {
     border-radius: 5px;
     border-color: #07648f;
     padding: 3px;
@@ -48,7 +47,7 @@
 
 }
 
-.pagination {
+.paginationhm {
     margin: 40px;
     padding: 10px;
     padding-top: 30px;

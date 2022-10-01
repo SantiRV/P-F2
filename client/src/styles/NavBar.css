@@ -8,7 +8,7 @@
        
 }
 
-.bothome {
+.bothomenb {
     height: 25px;
     position: absolute;
     display: inline-flex;
@@ -17,12 +17,12 @@
     
 }
 
-.bothome:hover {
+.bothomenb:hover {
     height: 99px;
     opacity: 90%;
 }
 
-.botact {
+.botactnb {
     font-size: large;
     padding: 5px;
     border-radius: 5px;
@@ -34,26 +34,26 @@
     position: relative;
     left: 550px;
 }
-.botact:hover{
+.botactnb:hover{
     background-color: #07648f;
     border-color: goldenrod;
     color: antiquewhite;
 }
 
-.search {
+.searchnb {
     position:relative;
     padding: 5px;
     left: 57px;
     
 }
 
-.searchtitle {
+.searchtitlenb {
     color: #0C7296;
     font-weight: bolder;
     font-size: large;
 }
 
-.searchinp {
+.searchinpnb {
     border-radius: 5px;
     border-color: #FDC500;
     margin: 5px;

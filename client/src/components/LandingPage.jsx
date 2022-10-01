@@ -7,12 +7,12 @@ export default function LandingPage() {
     return (
         <div className='homepage'>
             
-            <h1 className='titulo'>Welcome to my Countries Page</h1>
-            <h1 className='titulo'>Travel with us!</h1>
-            <h3 className='titulo'>Author: Santiago Rambeaud Vazquez</h3>
+            <h1 className='titulolp'>Welcome to my Countries Page</h1>
+            <h1 className='titulolp'>Travel with us!</h1>
+            <h3 className='titulolp'>Author: Santiago Rambeaud Vazquez</h3>
             
             <Link to='/home'>
-                <button className='button'>
+                <button className='buttonlp'>
                     <h3>
                         <span>Home <RiHome4Fill/></span>
                     </h3>

@@ -56,16 +56,16 @@ export default function Home() {
     };
 
     return (
-        <div className='prindiv'>
+        <div className='prindivhm'>
             
             <div>
                 <NavBar setCurrentPage={setCurrentPage} />
             </div>
             
-            <div className='filters'>
+            <div className='filtershm'>
                 <div>
                     Order alphabetically
-                    <select className='select' onChange={e => handleSort(e)}>
+                    <select className='selecthm' onChange={e => handleSort(e)}>
                         <option></option>
                         <option value='asc'>A - Z</option>
                         <option value='desc'>Z - A</option>
@@ -73,7 +73,7 @@ export default function Home() {
                 </div>
                 <div>
                     Sort by number of inhabitants
-                    <select className='select' onChange={e => handleSortPop(e)}>
+                    <select className='selecthm' onChange={e => handleSortPop(e)}>
                         <option></option>
                         <option value='mayp'>Lowest to highest</option>
                         <option value='menp'>Highest to lowest</option>
@@ -81,7 +81,7 @@ export default function Home() {
                 </div>
                 <div>
                     Search by continents
-                    <select className='select' onChange={e => handleFilteredCountry(e)} >
+                    <select className='selecthm' onChange={e => handleFilteredCountry(e)} >
                         <option value={"All"}> </option>
                         <option value={"South America"}>Sudamérica</option>
                         <option value={"North America"}>Norteamérica</option>
@@ -95,7 +95,7 @@ export default function Home() {
                 <div>
                     Search by activity
                     {(activities.length === 0) ? <p>No activities found</p> :
-                    <select className='select' onChange={e => handleFilterByAct(e)}>
+                    <select className='selecthm' onChange={e => handleFilterByAct(e)}>
                         <option value="none"></option>
                         {activities.map(e => (
                         <option value={e.name} key={e.id}>{e.name}</option>
@@ -106,12 +106,12 @@ export default function Home() {
             </div>
             {currentCountries?.map( (e) => {
                return (
-                <div className='contenedorCards'>
+                <div className='contenedorCardshm'>
                 <Card flags={e.flags} name={e.name} continents={e.continents} key={e.id} id={e.id} />
                 </div>
             )
         })}
-        <div className='pagination'>
+        <div className='paginationhm'>
             <Pagination countriesPerPage={countriesPerPage} allCountries={allCountries.length} pagination={pagination} />
         </div>
             
@@ -119,4 +119,4 @@ export default function Home() {
     )
 
 
-}
+};

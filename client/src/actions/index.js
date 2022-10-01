@@ -47,7 +47,7 @@ export function orderByPop(payload) {
 export function getCountryDetail(id) {
     return async function(dispatch){
         try {
-            let json = await axios.get('http://localhost:3001/countries' + id)
+            let json = await axios.get(`http://localhost:3001/countries/${id}`)
 
             return dispatch({
                 type: COUNTRYDETAIL,
@@ -62,7 +62,7 @@ export function getCountryDetail(id) {
 export function getCountrySearch(name) {
     return async function(dispatch) {
         try {
-            let json = await axios.get('http://localhost:3001/countries?name=' + name.charAt(0).toUpperCase() + name.slice(1)) //Estudiar bien
+             let json = await axios.get(`http://localhost:3001/countries?name=${name}`) //+ name.charAt(0).toUpperCase() + name.slice(1)) //Estudiar bien
             return dispatch({
                 type: GETCOUNTRIESQUERY,
                     payload: json.data
