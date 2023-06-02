@@ -1,4 +1,4 @@
-const { Appreciation } = require('../models/Appreciation');
+const { Appreciation } = require('../models');
 
 exports.getAppreciations = async (req, res) => {
   try {
