@@ -1,69 +1,57 @@
 const { Appreciation } = require('../models/Appreciation');
 
-const createAppreciation = async (req, res) => {
+exports.getAppreciations = async (req, res) => {
+  try {
+    const appreciations = await Appreciation.findAll();
+    res.status(200).json(appreciations); 
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+exports.createAppreciation = async (req, res) => {
   try {
     const appreciation = await Appreciation.create(req.body);
     res.status(201).json(appreciation);
-  } catch (err) {
-    res.status(500).json({ error: 'Error al crear la valoración' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 };
 
-const getAppreciations = async (req, res) => {
-  try {
-    const appreciations = await Appreciation.findAll();
-    res.json(appreciations);
-  } catch (err) {
-    res.status(500).json({ error: 'Error al obtener las valoraciones' });
-  }
-};
-
-const getAppreciationById = async (req, res) => {
+exports.getAppreciationsById = async (req, res) => {
   try {
     const appreciation = await Appreciation.findByPk(req.params.id);
     if (!appreciation) {
-      res.status(404).json({ error: 'Valoración no encontrada' });
-    } else {
-      res.json(appreciation);
+      return res.status(404).json({ error: 'Appreciation not found' });
     }
-  } catch (err) {
-    res.status(500).json({ error: 'Error al obtener la valoración' });
+    res.status(200).json(appreciation);
+  } catch (error) {
+    res.status(500).json({ error: error.message})
   }
 };
 
-const updateAppreciation = async (req, res) => {
+exports.updateAppreciation = async (req, res) => {
   try {
-    const [rowsUpdated, [updatedAppreciation]] = await Appreciation.update(req.body, {
-      returning: true,
-      where: { id: req.params.id },
-    });
-    if (rowsUpdated === 0) {
-      res.status(404).json({ error: 'Valoración no encontrada' });
-    } else {
-      res.json(updatedAppreciation);
+    const appreciation = await Appreciation.findByPk(req.params.id);
+    if (!appreciation) {
+      return res.status(404).json({ error: 'Appreciation not found'});
     }
-  } catch (err) {
-    res.status(500).json({ error: 'Error al actualizar la valoración' });
+    await appreciation.update(req.body);
+    res.status(200).json(appreciation)
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 };
 
-const deleteAppreciation = async (req, res) => {
+exports.deleteAppreciation = async (req, res) => {
   try {
-    const rowsDeleted = await Appreciation.destroy({ where: { id: req.params.id } });
-    if (rowsDeleted === 0) {
-      res.status(404).json({ error: 'Valoración no encontrada' });
-    } else {
-      res.status(204).send();
+    const appreciation = await Appreciation.findByPk(req.params.id);
+    if (!appreciation) {
+      return res.status(404).json({ error: 'Appreciation not found'});
     }
-  } catch (err) {
-    res.status(500).json({ error: 'Error al eliminar la valoración' });
+    await appreciation.destroy();
+    res.status(204).end();
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
-};
-
-module.exports = {
-  createAppreciation,
-  getAppreciations,
-  getAppreciationById,
-  updateAppreciation,
-  deleteAppreciation,
 };
