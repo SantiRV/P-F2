@@ -1,6 +1,6 @@
 const Team = require('../models');
 
-exports.getTeams = async (req, res) => {
+exports.getAllTeams = async (req, res) => {
   try {
     const teams = await Team.findAll();
     res.status(200).json(teams);
