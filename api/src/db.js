@@ -37,11 +37,11 @@ const { User, Team, Message, Appreciation } = sequelize.models;
 User.belongsToMany(Team, { through: 'UserTeam' });
 Team.belongsToMany(User, { through: 'UserTeam' });
 
-Message.belongsTo(User, { as: 'sender' });
-Message.belongsTo(User, { as: 'receiver' });
+Message.belongsTo(User, { through: 'MessagesUser' });
+User.belongsTo(Message, { through: 'MessagesUser' });
 
-Appreciation.belongsTo(User, { as: 'rater' });
-Appreciation.belongsTo(User, { as: 'rated' });
+Appreciation.belongsTo(User, { through: 'RatingUser' });
+User.belongsTo(Appreciation, { through: 'RatingUser' });
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
