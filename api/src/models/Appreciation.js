@@ -10,12 +10,12 @@ module.exports = (sequelize) => {
       primaryKey: true,
       allowNull: false,
     },
-    score: {
+    rating: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
     comment: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     }
   });
